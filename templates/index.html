@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Life Companion</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f0f0f0; }
+        .chatbox { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
+        input[type=text] { width: 80%; padding: 10px; }
+        input[type=submit] { padding: 10px 15px; }
+        .answer { margin-top: 20px; background: #e7f3ff; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="chatbox">
+        <h2>Daily Life Companion</h2>
+        <form method="post">
+            <input type="text" name="question" placeholder="Ask me anything..." value="{{ question }}" required>
+            <input type="submit" value="Ask">
+        </form>
+
+        {% if answer %}
+        <div class="answer">
+            <strong>Assistant:</strong>
+            <p>{{ answer }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
